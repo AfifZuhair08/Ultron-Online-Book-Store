@@ -1,0 +1,3 @@
+SESSION['mycart']	- cart session includes $isbn as book
+SESSION['totalItems']	- total $isbn in a cart
+SESSION['totalPrice']	- total book's price in the cart
