@@ -5,8 +5,8 @@
                 <div class="col-sm-6">
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> 010 010010</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@nodomain.com</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i> 010 4122313</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> info@ultronbooks.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -30,9 +30,10 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="{{url('/')}}"><img src="{{asset('frontEnd/images/home/logo.png')}}" alt="" /></a>
+                        <a href="{{url('/')}}"><img src="{{asset('../img/ultronlogo2.png')}}" alt="" style="height:55px;width:180px;"/></a>
                     </div>
-                    <div class="btn-group pull-right">
+
+                    {{-- <div class="btn-group pull-right">
                         <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
                                 USA
@@ -54,7 +55,8 @@
                                 <li><a href="#">Pound</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
+
                 </div>
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
@@ -95,6 +97,16 @@
                                     <li><a href="{{url('/myaccount')}}">Account</a></li>
                                     <li><a href="{{url('/viewcart')}}">Cart</a></li>
                                 </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                Forums
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                Reviews
+                                </a>
                             </li>
                             <li><a href="https://www.youtube.com/channel/UCH2Ir7rPaRN8ZPL9mSpclhw" target="_blank">Contact</a></li>
                         </ul>

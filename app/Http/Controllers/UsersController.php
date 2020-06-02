@@ -24,7 +24,7 @@ class UsersController extends Controller
         $input_data=$request->all();
         $input_data['password']=Hash::make($input_data['password']);
         User::create($input_data);
-        return back()->with('message','Registered already!');
+        return back()->with('message','Registration success!');
     }
     public function login(Request $request){
         $input_data=$request->all();

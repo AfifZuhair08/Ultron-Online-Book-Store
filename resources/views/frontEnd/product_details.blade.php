@@ -1,5 +1,5 @@
 @extends('frontEnd.layouts.master')
-@section('title','Detial Page')
+@section('title','Book Details Page')
 @section('slider')
 @endsection
 @section('content')
@@ -39,22 +39,15 @@
                     <input type="hidden" name="products_id" value="{{$detail_product->id}}">
                     <input type="hidden" name="product_name" value="{{$detail_product->p_name}}">
                     <input type="hidden" name="product_code" value="{{$detail_product->p_code}}">
-                    <input type="hidden" name="product_color" value="{{$detail_product->p_color}}">
+                    {{-- <input type="hidden" name="product_color" value="{{$detail_product->p_color}}"> --}}
                     <input type="hidden" name="price" value="{{$detail_product->price}}" id="dynamicPriceInput">
                     <div class="product-information"><!--/product-information-->
                         <img src="{{asset('frontEnd/images/product-details/new.jpg')}}" class="newarrival" alt="" />
                         <h2>{{$detail_product->p_name}}</h2>
-                        <p>Code ID: {{$detail_product->p_code}}</p>
+                        <p>ISBN ID: {{$detail_product->p_code}}</p>
+                        <br>
                         <span>
-                            <select name="size" id="idSize" class="form-control">
-                        	<option value="">Select Size</option>
-                            @foreach($detail_product->attributes as $attrs)
-                                <option value="{{$detail_product->id}}-{{$attrs->size}}">{{$attrs->size}}</option>
-                            @endforeach
-                        </select>
-                        </span><br>
-                        <span>
-                            <span id="dynamic_price">US ${{$detail_product->price}}</span>
+                            <span id="dynamic_price">RM {{$detail_product->price}}</span>
                             <label>Quantity:</label>
                             <input type="text" name="quantity" value="{{$totalStock}}" id="inputStock"/>
                             @if($totalStock>0)
@@ -66,12 +59,11 @@
                         </span>
                         <p><b>Availability:</b>
                             @if($totalStock>0)
-                                <span id="availableStock">In Stock</span>
+                                <span id="availableStock">In Stock ({{$totalStock}}pcs)</span>
                             @else
                                 <span id="availableStock">Out of Stock</span>
                             @endif
                         </p>
-                        <p><b>Condition:</b> New</p>
                         <a href=""><img src="{{asset('frontEnd/images/product-details/share.png')}}" class="share img-responsive"  alt="" /></a>
                     </div><!--/product-information-->
                 </form>
@@ -83,64 +75,12 @@
             <div class="col-sm-12">
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
-                    <li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
                     <li><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
                 </ul>
             </div>
             <div class="tab-content">
                 <div class="tab-pane fade active in" id="details" >
                     {{$detail_product->description}}
-                </div>
-
-                <div class="tab-pane fade" id="companyprofile" >
-                    <div class="col-sm-3">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="{{asset('frontEnd/images/home/gallery1.jpg')}}" alt="" />
-                                    <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="{{asset('frontEnd/images/home/gallery3.jpg')}}" alt="" />
-                                    <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="{{asset('frontEnd/images/home/gallery2.jpg')}}" alt="" />
-                                    <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="{{asset('frontEnd/images/home/gallery4.jpg')}}" alt="" />
-                                    <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="tab-pane fade" id="reviews" >

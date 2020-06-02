@@ -46,8 +46,6 @@ Route::group(['middleware'=>'FrontLogin_middleware'],function (){
 ///
 
 
-
-
 /* Admin Location */
 Auth::routes(['register'=>false]);
 Route::get('/home', 'HomeController@index')->name('home');

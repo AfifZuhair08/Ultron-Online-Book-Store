@@ -46,7 +46,6 @@ class ProductsController extends Controller
         $this->validate($request,[
             'p_name'=>'required|min:5',
             'p_code'=>'required',
-            'p_color'=>'required',
             'description'=>'required',
             'price'=>'required|numeric',
             'image'=>'required|image|mimes:png,jpg,jpeg|max:1000',
@@ -108,7 +107,7 @@ class ProductsController extends Controller
         $this->validate($request,[
             'p_name'=>'required|min:5',
             'p_code'=>'required',
-            'p_color'=>'required',
+            // 'p_color'=>'required',
             'description'=>'required',
             'price'=>'required|numeric',
             'image'=>'image|mimes:png,jpg,jpeg|max:1000',

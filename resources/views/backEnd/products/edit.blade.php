@@ -50,13 +50,13 @@
                             <span class="text-danger">{{$errors->first('p_code')}}</span>
                         </div>
                     </div>
-                    <div class="control-group">
+                    {{-- <div class="control-group">
                         <label for="p_color" class="control-label">Color</label>
                         <div class="controls{{$errors->has('p_color')?' has-error':''}}">
                             <input type="text" name="p_color" id="p_color" value="{{$edit_product->p_color}}" required="required" style="width: 400px;">
                             <span class="text-danger">{{$errors->first('p_color')}}</span>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="control-group">
                         <label for="description" class="control-label">Description</label>
                         <div class="controls{{$errors->has('description')?' has-error':''}}">
@@ -67,7 +67,7 @@
                     <div class="control-group">
                         <label for="price" class="control-label">Price</label>
                         <div class="controls{{$errors->has('price')?' has-error':''}}">
-                            <div class="input-prepend"> <span class="add-on">$</span>
+                            <div class="input-prepend"> <span class="add-on">RM</span>
                                 <input type="number" name="price" id="price" class="" value="{{$edit_product->price}}" title="" required="required">
                                 <span class="text-danger">{{$errors->first('price')}}</span>
                             </div>

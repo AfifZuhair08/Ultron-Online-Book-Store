@@ -36,8 +36,6 @@ class ProductAtrrController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'sku'=>'required',
-            'size'=>'required',
             'price'=>'required|numeric|between:0,99.99',
             'stock'=>'required|numeric'
         ]);

@@ -10,7 +10,7 @@
         @endif
         <div class="widget-box">
             <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-                <h5>List Products</h5>
+                <h5>List of Books</h5>
             </div>
             <div class="widget-content nopadding">
                 <table class="table table-bordered data-table">
@@ -18,11 +18,10 @@
                     <tr>
                         <th>ID</th>
                         <th>Image</th>
-                        <th>Product Name</th>
-                        <th>Under Category</th>
-                        <th>Code Of Product</th>
-                        <th>Product Color</th>
-                        <th>Price</th>
+                        <th>Book Name</th>
+                        <th>Category</th>
+                        <th>ISBN</th>
+                        <th>Price (RM)</th>
                         <th>Image Gallery</th>
                         <th>Add Attribute</th>
                         <th>Action</th>
@@ -37,7 +36,6 @@
                             <td style="vertical-align: middle;">{{$product->p_name}}</td>
                             <td style="vertical-align: middle;">{{$product->category->name}}</td>
                             <td style="vertical-align: middle;">{{$product->p_code}}</td>
-                            <td style="vertical-align: middle;">{{$product->p_color}}</td>
                             <td style="vertical-align: middle;">{{$product->price}}</td>
                             <td style="vertical-align: middle;text-align: center;"><a href="{{route('image-gallery.show',$product->id)}}" class="btn btn-default btn-mini">Add Images</a></td>
                             <td style="vertical-align: middle;text-align: center;"><a href="{{route('product_attr.show',$product->id)}}" class="btn btn-success btn-mini">Add Attr</a></td>

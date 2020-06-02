@@ -1,7 +1,7 @@
 @extends('backEnd.layouts.master')
-@section('title','Add Products Page')
+@section('title','Add New Book')
 @section('content')
-    <div id="breadcrumb"> <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="{{route('product.index')}}">Products</a> <a href="{{route('product.create')}}" class="current">Add New Product</a> </div>
+    <div id="breadcrumb"> <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="{{route('product.index')}}">Books</a> <a href="{{route('product.create')}}" class="current">Add New Book</a> </div>
     <div class="container-fluid">
         @if(Session::has('message'))
             <div class="alert alert-success text-center" role="alert">
@@ -10,7 +10,7 @@
         @endif
         <div class="widget-box">
             <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-                <h5>Add New Products</h5>
+                <h5>Add New Book</h5>
             </div>
             <div class="widget-content nopadding">
                 <form action="{{route('product.store')}}" method="post" class="form-horizontal" enctype="multipart/form-data">
@@ -43,17 +43,10 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="p_code" class="control-label">Code</label>
+                        <label for="p_code" class="control-label">ISBN</label>
                         <div class="controls{{$errors->has('p_code')?' has-error':''}}">
                             <input type="text" name="p_code" id="p_code" class="form-control" value="{{old('p_code')}}" title="" required="required" style="width: 400px;">
                             <span class="text-danger">{{$errors->first('p_code')}}</span>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="p_color" class="control-label">Color</label>
-                        <div class="controls{{$errors->has('p_color')?' has-error':''}}">
-                            <input type="text" name="p_color" id="p_color" value="{{old('p_color')}}" required="required" style="width: 400px;">
-                            <span class="text-danger">{{$errors->first('p_color')}}</span>
                         </div>
                     </div>
                     <div class="control-group">
@@ -66,7 +59,7 @@
                     <div class="control-group">
                         <label for="price" class="control-label">Price</label>
                         <div class="controls{{$errors->has('price')?' has-error':''}}">
-                            <div class="input-prepend"> <span class="add-on">$</span>
+                            <div class="input-prepend"> <span class="add-on">RM</span>
                                 <input type="number" name="price" id="price" class="" value="{{old('price')}}" title="" required="required">
                                 <span class="text-danger">{{$errors->first('price')}}</span>
                             </div>
