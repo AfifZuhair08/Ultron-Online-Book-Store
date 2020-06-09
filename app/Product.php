@@ -2,13 +2,14 @@
 
 namespace App;
 
-use Laravel\Scout\Searchable;
+// use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Product extends Model
 {
-    use SearchableTrait, Searchable;
+    use SearchableTrait;
+    // use Searchable;
 
     protected $fillable = ['quantity'];
 
@@ -39,7 +40,7 @@ class Product extends Model
 
     public function presentPrice()
     {
-        return money_format('$%i', $this->price / 100);
+        return 'RM'.number_format($this->price / 100, 2);
     }
 
     public function scopeMightAlsoLike($query)
